@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/bookmark.png" type="image/x-icon" />
+    <!-- Title -->
+    <title>Bookmark</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- CSS bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- validation message section Start -->
+    <div
+      id="validateMsg"
+      class="validate-msg d-flex justify-content-center align-items-center d-none"
+    >
+      <div class="validate-content bg-light rounded-3 p-3">
+        <div class="content-header d-flex justify-content-between">
+          <div class="header-left d-flex">
+            <span class="rounded-circle bg-danger mx-1"></span>
+            <span class="rounded-circle bg-warning mx-1"></span>
+            <span class="rounded-circle bg-success mx-1"></span>
+          </div>
+          <div id="closeBtn" class="header-right">
+            <i
+              onclick="closeVAlidationMsg()"
+              class="fa-solid fa-xmark close fs-3"
+            ></i>
+          </div>
+        </div>
+
+        <p class="mt-3 fs-4">
+          Site Name or Url is not valid, Please follow the <br />
+          rules below :
+        </p>
+        <div class="d-flex my-2 align-items-center">
+          <i class="fa-regular fa-circle-right p-2 text-danger me-3"></i>
+          <p class="m-0">Site name must contain at least 3 characters</p>
+        </div>
+        <div class="d-flex my-2 align-items-center">
+          <i class="fa-regular fa-circle-right p-2 text-danger me-3"></i>
+          <p class="m-0">Site URL must be a valid one</p>
+        </div>
+      </div>
+    </div>
+    <!-- validation message section End -->
+
+    <!-- Header Start -->
+    <header><h1 class="mx-auto mt-5">Bookmarker</h1></header>
+    <!-- Header End -->
+
+    <!-- main section Start -->
+    <main>
+      <!-- Form Start -->
+      <section class="form container d-flex flex-column pt-4 mt-5">
+        <div class="form-header mx-auto">
+          <h2 class="">
+            <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+        </div>
+        <div class="form-content">
+          <div class="name-input">
+            <label for="exampleFormControlInput1" class="form-label">
+              <i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label
+            >
+
+            <input
+              oninput="validateInputs(this)"
+              id="NameInput"
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Bookmark Name"
+            />
+          </div>
+          <div class="url-input mt-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              <i class="fa-solid fa-link pe-2"></i> Site URL
+            </label>
+
+            <input
+              oninput="validateInputs(this)"
+              id="urlInput"
+              type="url"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Website URL"
+            />
+          </div>
+        </div>
+        <div class="form-footer mt-3 mx-auto">
+          <button
+            onclick="addSite()"
+            id="submitBtn"
+            type="button "
+            class="mb-4"
+          >
+            Submit
+          </button>
+        </div>
+      </section>
+      <!-- Form End -->
+    </main>
+    <!-- main section End -->
+
+    <!-- footer Start -->
+    <footer>
+      <div class="table-content container mt-4">
+        <table class="bg-light w-100 text-center">
+          <thead>
+            <tr>
+              <th class="p-2">index</th>
+              <th class="p-2">WebsiteName</th>
+              <th class="p-2">Visit</th>
+              <th class="p-2">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tBody"></tbody>
+        </table>
+      </div>
+    </footer>
+    <!-- footer End -->
+
+    <!-- Js Bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Main Js  -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

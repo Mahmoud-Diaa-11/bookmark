@@ -1,0 +1,124 @@
+/* Global Style */
+@font-face {
+  font-family: "Pacifico";
+  src: url(../fonts/Pacifico-Regular.ttf);
+}
+@font-face {
+  font-family: "PTSansCaption";
+  src: url(../fonts/PTSansCaption-Regular.ttf);
+}
+@font-face {
+  font-family: "Righteous";
+  src: url(../fonts/Righteous-Regular.ttf);
+}
+@font-face {
+  font-family: "BreeSerif";
+  src: url(../fonts/BreeSerif-Regular.ttf);
+}
+body::selection {
+  background-color: #fec260;
+  color: #352e28;
+}
+body {
+  background-color: #f7ecde;
+  color: #212529;
+  font-weight: 700;
+  font-family: "PTSansCaption";
+}
+h1 {
+  font-family: "Pacifico";
+  font-size: 3.125rem;
+  font-weight: 500;
+  position: relative;
+  width: fit-content;
+}
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  background-color: #fec260;
+  width: 100%;
+  height: 20px;
+  display: block;
+  z-index: -1;
+  transition: all 0.5s;
+}
+h1:hover::after {
+  height: 40px;
+}
+h2 {
+  font-family: "Righteous";
+  font-size: 1.5625rem;
+  font-weight: 500;
+  background-image: linear-gradient(to right, #3ea55c, #b2ac49);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+::placeholder {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+/* validation Msg Style */
+.validate-msg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #00000077;
+}
+.validate-content span {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.validate-content p.mt-3 {
+  font-weight: 400 !important;
+  font-size: 21px !important;
+  font-family: "BreeSerif";
+}
+.validate-content p.m-0 {
+  font-family: "PTSansCaption";
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+}
+.validate-content .header-right {
+  cursor: pointer;
+}
+/* Form Style */
+.form {
+  border-top: 2px dotted black;
+  border-bottom: 2px dotted black;
+}
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem #fec26055 !important;
+  border-color: #d99c39 !important ;
+}
+.form-footer button {
+  width: 170px;
+  height: 40px;
+  border-radius: 7px;
+  background-color: #d1512d;
+  transition: all 0.3s;
+  border: 0;
+  color: #ffffff;
+}
+.form-footer button:hover {
+  background-color: #bb4120;
+}
+tbody button {
+  /* width: 100px; */
+  border: 0 !important;
+}
+tbody button:focus {
+  box-shadow: none !important;
+}
+tbody #visitBtn {
+  background-color: #9eb23b !important;
+  color: #ffffff;
+}
+tbody #visitBtn:hover {
+  background-color: #8a9e23 !important;
+  border-color: #6e8018 !important;
+}
