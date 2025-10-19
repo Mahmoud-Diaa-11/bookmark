@@ -6,8 +6,7 @@ var visitBtn = document.getElementById("visitBtn");
 var validateMsg = document.getElementById("validateMsg");
 var closeBtn = document.getElementById("closeBtn");
 var bookmarkList = [];
-
-if (localStorage.getItem) {
+if (localStorage.getItem("infoContainer")) {
   bookmarkList = JSON.parse(localStorage.getItem("infoContainer"));
   displaySite();
 }
